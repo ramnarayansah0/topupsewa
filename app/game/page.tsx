@@ -64,7 +64,7 @@ function addText80w(){
 // api for post
 
 const addProduct=async ()=>{
-  let result = await fetch(`${API_URL}/api/users/[id]`,{
+  await fetch(`${API_URL}/api/users/[id]`,{
   method:"POST",
   body:JSON.stringify({price,playerid})
 })
@@ -167,13 +167,13 @@ const addProduct=async ()=>{
           <h1>Price: {price}</h1>
           <div className="bg-[#336666] mt-10 pb-3">
             <h1 className="text-white font-extrabold">Player Id(UID)</h1>
-            <input type="number" onChange={(e)=>setPlayerid(e.target.value)} className="px-14 sm:px-96 ml-2" placeholder="enter player uid"></input>
+            <input type="number" value={playerid} onChange={(e)=>setPlayerid(e.target.value)} className="px-14 sm:px-96 ml-2" placeholder="enter player uid"></input>
 
 
           </div>
           <Link onClick={addProduct} href="/checkout" className="font-extrabold text-white bg-[#336666] px-6 py-2 mt-24 rounded-xl">Buy Now</Link>
           <div>
-            <h1>Price: {}</h1>
+            
             <h1>How to purchase Free Fire BD Diamonds in Game Shop Np:</h1>
             <h2>
             First, select the Diamond Pack denomination.
