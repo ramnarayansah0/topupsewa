@@ -17,4 +17,6 @@ model Project {
   id       Int    @id @default(autoincrement())
   playerid String @db.Text
   price    String @db.Text
+  names    String @db.Text
+  whatsapp String @db.Text
 }

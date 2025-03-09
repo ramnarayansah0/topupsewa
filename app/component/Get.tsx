@@ -21,7 +21,7 @@ const Page = async () => {
               {users.map((user: any) => (
                 <tr key={user.id} className="border-t hover:bg-gray-50">
                   <td className="px-4 py-2">{user.id}</td>
-                  <td className="px-4 py-2">{user.name}</td>
+                  <td className="px-4 py-2">{user.names}</td>
                   <td className="px-4 py-2">{user.playerid}</td>
                   <td className="px-4 py-2">{user.price}</td>
                 </tr>

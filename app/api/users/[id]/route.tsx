@@ -15,7 +15,9 @@ export async function GET(request:NextRequest)
         const user = await prisma.project.create({
             data: {
                 price:body.price,
-                playerid:body.playerid
+                playerid:body.playerid,
+                names:body.names,
+                whatsapp:body.whatsapp
             }
         });
        
