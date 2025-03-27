@@ -2,7 +2,7 @@ import React from "react";
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 const Page = async () => {
   try {
-    const response = await fetch(`${API_URL}/api/users/[id]`);
+    const response = await fetch(`${API_URL}/api/users`);
     const users = await response.json();
 
     return (
