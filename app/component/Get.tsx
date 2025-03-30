@@ -1,8 +1,19 @@
 import React from "react";
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 const Page = async () => {
   try {
-    const response = await fetch(`${API_URL}/api/users`);
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+    const response = await fetch(`${baseUrl}/api/users`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
     const users = await response.json();
 
     return (
@@ -33,7 +44,14 @@ const Page = async () => {
     );
   } catch (error) {
     console.error("Error fetching data:", error);
-    return <div className="text-red-500">Error loading users...</div>;
+    return (
+      <div className="container mx-auto p-4">
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+          <strong className="font-bold">Error!</strong>
+          <span className="block sm:inline"> Failed to load users. Please try again later.</span>
+        </div>
+      </div>
+    );
   }
 };
 

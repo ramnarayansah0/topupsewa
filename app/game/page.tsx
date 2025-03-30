@@ -66,7 +66,7 @@ function addText80w(){
 // api for post
 
 const addProduct=async ()=>{
-  await fetch(`${API_URL}/api/users/[id]`,{
+  await fetch(`${API_URL}/api/users`,{
   method:"POST",
   body:JSON.stringify({price,playerid,names,whatsapp})
 })
