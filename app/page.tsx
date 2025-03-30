@@ -1,4 +1,3 @@
-
 import Footer from "./component/Footer";
 import Get from "./component/Get";
 import Header from "./component/Header";
@@ -40,7 +39,10 @@ export default async function page(){
 <ProductCard name="Coming Soon"  price="$1.00" img="comming.png"/>
 <ProductCard name="Coming Soon"  price="$1.00" img="comming.png"/>
   </div>
+  <div className="h-[50vh] overflow-y-auto">
+
 <Get/>
+  </div>
 </main>
 <Footer/>
   </div>)
