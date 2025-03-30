@@ -4,7 +4,9 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 import { useState } from "react";
 import Link from "next/link";
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+// Update API URL to use port 3000
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
 export default function page() {
   const [price,setPrice]=useState("Click On Diamond")
@@ -62,15 +64,51 @@ function addText80w(){
   const [playerid,setPlayerid] =useState("");
   const [names,setName] =useState("");
   const [whatsapp,setWhatsapp] =useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
 // api for post
+const addProduct = async () => {
+  try {
+    setIsLoading(true);
+    setError("");
+    
+    if (!playerid || !names || !whatsapp || price === "Click On Diamond") {
+      setError("Please fill in all fields and select a price");
+      return;
+    }
 
-const addProduct=async ()=>{
-  await fetch(`${API_URL}/api/users`,{
-  method:"POST",
-  body:JSON.stringify({price,playerid,names,whatsapp})
-})
-}
+    console.log('Sending request to:', `${API_URL}/api/users`);
+    const response = await fetch(`${API_URL}/api/users`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ price, playerid, names, whatsapp })
+    });
+
+    const data = await response.json();
+    console.log('Response:', data);
+
+    if (!response.ok) {
+      throw new Error(data.error || "Failed to create order");
+    }
+
+    // Clear form after successful submission
+    setPlayerid("");
+    setName("");
+    setWhatsapp("");
+    setPrice("Click On Diamond");
+    
+    // Navigate to checkout page
+    window.location.href = "/checkout";
+  } catch (err: any) {
+    console.error('Error:', err);
+    setError(err.message || "An error occurred while creating the order");
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   return (
     <>
@@ -159,29 +197,57 @@ const addProduct=async ()=>{
             </div>
           </div>
           <h1>Price: {price}</h1>
-          <div className="bg-[#336666] mt-10 pb-3">
-            <h1 className="text-white font-extrabold">Player Id(UID)</h1>
-            <input type="number" value={playerid} onChange={(e)=>setPlayerid(e.target.value)} className="px-14 sm:px-96 ml-2" placeholder="Enter player uid"></input>
-            <h1 className="text-white font-extrabold">Player Id(UID)</h1>
-            <input type="text" value={names} onChange={(e)=>setName(e.target.value)} className="px-14 sm:px-96 ml-2" placeholder="Name"></input>
-            <h1 className="text-white font-extrabold">Player Id(UID)</h1>
-            <input type="number" value={whatsapp} onChange={(e)=>setWhatsapp(e.target.value)} className="px-14 sm:px-96 ml-2" placeholder="Whatsapp no:"></input>
-
-
-          </div>
-          <Link onClick={addProduct} href="/checkout" className="font-extrabold text-white bg-[#336666] px-6 py-2 mt-24 rounded-xl">Buy Now</Link>
-          <div>
+          <div className="bg-[#336666] dark:bg-[#1a3333] mt-10 pb-3 rounded-lg shadow-lg">
+            <h1 className="text-white font-extrabold text-lg mb-2">Player ID (UID)</h1>
+            <input 
+              type="number" 
+              value={playerid} 
+              onChange={(e)=>setPlayerid(e.target.value)} 
+              className="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-[#336666] dark:focus:ring-[#4a9db3] transition duration-300" 
+              placeholder="Enter player uid"
+            />
             
-            <h1>How to purchase Free Fire BD Diamonds in Game Shop Np:</h1>
-            <h2>
-            First, select the Diamond Pack denomination.
+            <h1 className="text-white font-extrabold text-lg mt-4 mb-2">Name</h1>
+            <input 
+              type="text" 
+              value={names} 
+              onChange={(e)=>setName(e.target.value)} 
+              className="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-[#336666] dark:focus:ring-[#4a9db3] transition duration-300" 
+              placeholder="Enter your name"
+            />
+            
+            <h1 className="text-white font-extrabold text-lg mt-4 mb-2">WhatsApp Number</h1>
+            <input 
+              type="number" 
+              value={whatsapp} 
+              onChange={(e)=>setWhatsapp(e.target.value)} 
+              className="w-full px-4 py-2 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-[#336666] dark:focus:ring-[#4a9db3] transition duration-300" 
+              placeholder="Enter WhatsApp number"
+            />
+          </div>
 
-Next, enter your Free Fire Player ID.
+          {error && (
+            <div className="mt-4 p-4 bg-red-100 dark:bg-red-900/20 border border-red-400 dark:border-red-800 text-red-700 dark:text-red-200 rounded-lg">
+              {error}
+            </div>
+          )}
 
-After that, check out and choose your payment method.
+          <button 
+            onClick={addProduct} 
+            disabled={isLoading}
+            className={`w-full mt-6 font-extrabold text-white bg-[#336666] dark:bg-[#4a9db3] px-6 py-3 rounded-xl shadow-lg hover:bg-[#255b42] dark:hover:bg-[#367588] transition duration-300 ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+          >
+            {isLoading ? 'Processing...' : 'Buy Now'}
+          </button>
 
-After payment is made, the Diamond you purchased will be credited to your account within 5 minutes
-            </h2>
+          <div className="mt-8 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <h1 className="text-xl font-bold text-gray-900 dark:text-white mb-4">How to purchase Free Fire BD Diamonds in Game Shop Np:</h1>
+            <div className="space-y-2 text-gray-700 dark:text-gray-300">
+              <p>1. First, select the Diamond Pack denomination.</p>
+              <p>2. Next, enter your Free Fire Player ID.</p>
+              <p>3. After that, check out and choose your payment method.</p>
+              <p>4. After payment is made, the Diamond you purchased will be credited to your account within 5 minutes</p>
+            </div>
           </div>
         </main>
         <Footer/>
