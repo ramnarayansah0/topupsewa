@@ -17,7 +17,10 @@ export default function Uploadq() {
         }}
       >
         {({ open }) => (
-          <button className="bg-lime-400 px-4 py-2 rounded-md" onClick={() => open()}>
+          <button 
+            className="bg-lime-400 dark:bg-lime-600 px-4 py-2 rounded-md text-gray-900 dark:text-white hover:bg-lime-500 dark:hover:bg-lime-700 transition duration-200" 
+            onClick={() => open()}
+          >
             Upload
           </button>
         )}

@@ -2,23 +2,23 @@ import Link from "next/link";
 
 export default function ProductCard(props: any) {
     return (
-        <div className="bg-amber-400 rounded-lg p-4">
+        <div className="bg-amber-400 dark:bg-amber-900 rounded-lg p-4">
             <img 
                 src={props.img} 
                 alt={props.name} 
                 className="w-32 h-32 mx-auto py-2"
             />
             <div className="description px-5 flex flex-col items-center">
-                <h2 className="text-sm font-bold text-center">{props.name}</h2>
-                <p className="price text-xs text-center">{props.price}</p>
+                <h2 className="text-sm font-bold text-center text-gray-900 dark:text-white">{props.name}</h2>
+                <p className="price text-xs text-center text-gray-800 dark:text-gray-200">{props.price}</p>
             </div>
             {/* Ensure `props.Url` exists, otherwise fallback to "#" */}
             {props.Url ? (
-                <Link href={props.Url} className="mx-8 bg-blue-400 p-1 rounded-lg font-semibold text-sm text-center hover:bg-blue-700 transition duration-200">
+                <Link href={props.Url} className="mx-8 bg-blue-400 dark:bg-blue-600 p-1 rounded-lg font-semibold text-sm text-center text-white hover:bg-blue-700 dark:hover:bg-blue-800 transition duration-200">
                     Buy Now
                 </Link>
             ) : (
-                <button className="mx-8  bg-gray-400 p-1 rounded-lg font-semibold text-sm text-center cursor-not-allowed" disabled>
+                <button className="mx-8 bg-gray-400 dark:bg-gray-600 p-1 rounded-lg font-semibold text-sm text-center text-white dark:text-gray-200 cursor-not-allowed" disabled>
                     Buy Now
                 </button>
             )}

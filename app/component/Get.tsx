@@ -18,9 +18,9 @@ const Page = async () => {
 
     return (
       <div className="container mx-auto p-4">
-        <div className="overflow-x-auto bg-white shadow-md rounded-lg">
+        <div className="overflow-x-auto bg-white dark:bg-gray-800 shadow-md rounded-lg" style={{ maxHeight: '50vh' }}>
           <table className="min-w-full table-auto">
-            <thead className="bg-gray-100 text-gray-600">
+            <thead className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-200 sticky top-0">
               <tr>
                 <th className="px-4 py-2 text-left">SN</th>
                 <th className="px-4 py-2 text-left">Name</th>
@@ -28,9 +28,9 @@ const Page = async () => {
                 <th className="px-4 py-2 text-left">Price</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="overflow-y-auto text-gray-900 dark:text-white">
               {users.map((user: any) => (
-                <tr key={user.id} className="border-t hover:bg-gray-50">
+                <tr key={user.id} className="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
                   <td className="px-4 py-2">{user.id}</td>
                   <td className="px-4 py-2">{user.names}</td>
                   <td className="px-4 py-2">{user.playerid}</td>
@@ -46,7 +46,7 @@ const Page = async () => {
     console.error("Error fetching data:", error);
     return (
       <div className="container mx-auto p-4">
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+        <div className="bg-red-100 dark:bg-red-900/20 border border-red-400 dark:border-red-800 text-red-700 dark:text-red-200 px-4 py-3 rounded relative" role="alert">
           <strong className="font-bold">Error!</strong>
           <span className="block sm:inline"> Failed to load users. Please try again later.</span>
         </div>

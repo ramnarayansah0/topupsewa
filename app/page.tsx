@@ -8,11 +8,11 @@ export default async function page(){
 
 
   return(
-  <div >
+  <div className="min-h-screen bg-white dark:bg-gray-900">
   
 <Header/>
-<main >
-<h1 className=" learn text-center p-2 bg-red-50 mb-2 ">Product</h1>
+<main className="text-gray-900 dark:text-white">
+<h1 className="learn text-center p-2 bg-red-50 dark:bg-red-900/20 mb-2 text-gray-900 dark:text-white">Product</h1>
 
   <div className="flex justify-center flex-wrap ml-2 gap-4   ">
 
@@ -22,7 +22,7 @@ export default async function page(){
 <ProductCard name="Coming Soon"  price="$1.00" img="comming.png"/>
   </div>
 
-  <h1 className="learn text-center p-2 bg-red-50 mt-2 mb-2" >Subscription</h1>
+  <h1 className="learn text-center p-2 bg-red-50 dark:bg-red-900/20 mt-2 mb-2 text-gray-900 dark:text-white">Subscription</h1>
   <div className="flex justify-center flex-wrap ml-2 gap-4   ">
 
 <ProductCard name="Coming Soon"  price="$6.00" img="comming.png"/>
@@ -31,7 +31,7 @@ export default async function page(){
 <ProductCard name="Coming Soon"  price="$1.00" img="comming.png"/>
   </div>
 
-  <h1 className="learn text-center p-2 bg-red-50 mt-2 mb-2" >Gift Card</h1>
+  <h1 className="learn text-center p-2 bg-red-50 dark:bg-red-900/20 mt-2 mb-2 text-gray-900 dark:text-white">Gift Card</h1>
   <div className="flex justify-center flex-wrap ml-2 gap-4   ">
 
 <ProductCard name="Coming Soon"  price="$6.00" img="comming.png"/>

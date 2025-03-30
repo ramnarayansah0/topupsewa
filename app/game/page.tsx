@@ -74,7 +74,7 @@ const addProduct=async ()=>{
 
   return (
     <>
-      <div>
+      <div className="min-h-screen bg-white dark:bg-gray-900">
        <Header/>
        
 
@@ -84,12 +84,12 @@ const addProduct=async ()=>{
           </div>
 
           <div className="mt-10 ml-4">
-            <h1 className="font-extrabold text-2xl">Free Fire (Indonesia)</h1>
-            <h2 className="text-lg">Rs 85 - Rs 9,870</h2>
+            <h1 className="font-extrabold text-2xl text-gray-900 dark:text-white">Free Fire (Indonesia)</h1>
+            <h2 className="text-lg text-gray-700 dark:text-gray-300">Rs 85 - Rs 9,870</h2>
           </div>
 
           {/* Left and Right Component Placement */}
-          <div className="bg-[#336666] rounded-xl w-full  mt-8 p-4">
+          <div className="bg-[#336666] dark:bg-[#1a3333] rounded-xl w-full  mt-8 p-4">
             <div className="grid grid-cols-2 gap-4 h-full">
               {/* Left Side */}
               <div className="col-span-1 flex flex-col gap-4">
@@ -98,31 +98,31 @@ const addProduct=async ()=>{
                 </button>
                 
                 <button onClick={addText220}>
-                <Price price="220" diamond="240 Diamond" />
+                   <Price price="220" diamond="260 Diamond" />
                 </button>
 
                 <button onClick={addText440}>
-                <Price price="440" diamond="480 Diamond"/>
+                   <Price price="440" diamond="520 Diamond" />
                 </button>
 
                 <button onClick={addText770}>
-                <Price price="770" diamond="850 Diamond"/>
+                   <Price price="770" diamond="910 Diamond" />
                 </button>
 
                 <button onClick={addText1100}>
-                <Price price="1100" diamond="1240 Diamond"/>
+                   <Price price="1100" diamond="1300 Diamond" />
                 </button>
 
                 <button onClick={addText4400}>
-                   <Price price="4400" diamond="5060 Diamond"/>
+                   <Price price="4400" diamond="5200 Diamond" />
                 </button>
 
                 <button onClick={addText1100l}>
-                <Price price="1100" diamond="Monthly Membership"/>
+                   <Price price="1100" diamond="1300 Diamond" />
                 </button>
 
                 <button onClick={addText220l}>
-                <Price price="220" diamond="Level Up Pass"/>
+                   <Price price="220" diamond="260 Diamond" />
                 </button>
                 
               </div>
@@ -130,38 +130,30 @@ const addProduct=async ()=>{
               {/* Right Side */}
               <div className="col-span-1 flex flex-col gap-4">
                 <button onClick={addText110}>
-
-                <Price price="110" diamond="115 Diamond"/>
+                   <Price price="110" diamond="130 Diamond" />
                 </button>
 
                
                 <button onClick={addText330}>
-
-                <Price price="330" diamond="355 Diamond"/>
+                   <Price price="330" diamond="390 Diamond" />
                 </button>
                 <button onClick={addText550}>
-
-                <Price price="550" diamond="610 Diamond"/>
+                   <Price price="550" diamond="650 Diamond" />
                 </button>
                 <button onClick={addText1000}>
-
-                <Price price="1000" diamond="1090 Diamond"/>
+                   <Price price="1000" diamond="1180 Diamond" />
                 </button>
                 <button onClick={addText2200}>
-
-                <Price price="2200" diamond="2530 Diamond"/>
+                   <Price price="2200" diamond="2600 Diamond" />
                 </button>
                 <button onClick={addText8800}>
-
-                <Price price="8800" diamond="10120 Diamond"/>
+                   <Price price="8800" diamond="10400 Diamond" />
                 </button>
                 <button onClick={addText220w}>
-
-                <Price price="220" diamond="Weekly Membership"/>
+                   <Price price="220" diamond="260 Diamond" />
                 </button>
                 <button onClick={addText80w}>
-
-                <Price price="80" diamond="Weekly Lite"/>
+                   <Price price="80" diamond="95 Diamond" />
                 </button>
               </div>
             </div>
