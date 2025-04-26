@@ -11,8 +11,8 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 export default function page() {
   const [price,setPrice]=useState("Click On Diamond")
   //this is for left part
-  function addText65(){
-    setPrice("44 (60💎)")
+  function addText55(){
+    setPrice("55 (60💎)")
   }
   function addText220(){
     setPrice("220 (60💎)")
@@ -131,7 +131,7 @@ const addProduct = async () => {
             <div className="grid grid-cols-2 gap-4 h-full">
               {/* Left Side */}
               <div className="col-span-1 flex flex-col gap-4">
-                <button onClick={addText65}>
+                <button onClick={addText55}>
                    <Price price="65" diamond="50 Diamond" />
                 </button>
                 

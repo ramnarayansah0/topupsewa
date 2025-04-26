@@ -19,7 +19,6 @@ export async function GET(request: NextRequest) {
   try {
     console.log('GET request received');
     
-    // Add error handling for database connection
     try {
       await prisma.$connect();
     } catch (dbError) {
@@ -53,7 +52,6 @@ export async function GET(request: NextRequest) {
       { status: 500 }
     ));
   } finally {
-    // Ensure database connection is closed
     await prisma.$disconnect();
   }
 }
@@ -64,7 +62,6 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     console.log('POST request received with data:', body);
 
-    // Validate required fields
     if (!body.price || !body.playerid || !body.names || !body.whatsapp) {
       console.log('Missing required fields:', { body });
       return corsResponse(NextResponse.json(
@@ -73,7 +70,6 @@ export async function POST(request: NextRequest) {
       ));
     }
 
-    // Validate data types and formats
     if (typeof body.price !== 'string' || typeof body.playerid !== 'string' || 
         typeof body.names !== 'string' || typeof body.whatsapp !== 'string') {
       console.log('Invalid data types:', { body });
@@ -83,19 +79,6 @@ export async function POST(request: NextRequest) {
       ));
     }
 
-    // Validate price format (should contain numbers and optional currency symbol)
-    if (!/^[0-9\s₹$()💎]+$/.test(body.price)) {
-      console.log('Invalid price format:', body.price);
-      return corsResponse(NextResponse.json(
-        { error: "Invalid price format" },
-        { status: 400 }
-      ));
-    }
-
-    // Extract just the numeric part from the price string
-    const numericPrice = body.price.match(/\d+/)?.[0] || body.price;
-
-    // Validate WhatsApp number format (should contain only numbers)
     if (!/^\d+$/.test(body.whatsapp)) {
       console.log('Invalid WhatsApp format:', body.whatsapp);
       return corsResponse(NextResponse.json(
@@ -104,11 +87,13 @@ export async function POST(request: NextRequest) {
       ));
     }
 
-    // Create the order
+    // Fix: Extract numeric part from price string
+   
+
     console.log('Creating order with data:', body);
     const user = await prisma.project.create({
       data: {
-        price: numericPrice,
+        price: body.price,
         playerid: body.playerid,
         names: body.names,
         whatsapp: body.whatsapp
@@ -122,8 +107,7 @@ export async function POST(request: NextRequest) {
     }, { status: 201 }));
   } catch (error: any) {
     console.error('Error creating order:', error);
-    
-    // Handle Prisma-specific errors
+
     if (error.code === 'P2002') {
       return corsResponse(NextResponse.json(
         { error: "Duplicate entry" },
@@ -136,4 +120,4 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     ));
   }
-} 
+}
