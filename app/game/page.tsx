@@ -4,6 +4,7 @@ import Header from "../component/Header";
 import Footer from "../component/Footer";
 import { useState } from "react";
 import Link from "next/link";
+import Head from 'next/head';
 
 // Update API URL to use port 3000
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
@@ -27,7 +28,7 @@ export default function page() {
     setPrice("1100 (60💎)")
   }
   function addText4400(){
-    setPrice("4400 (60💎)")
+    setPrice("4400 (5200💎)")
   }
   function addText1100l(){
     setPrice("1100 (60💎)")
@@ -101,7 +102,7 @@ const addProduct = async () => {
     setPrice("Click On Diamond");
     
     // Navigate to checkout page
-    window.location.href = "/checkout";
+    window.location.href = "/freefiretopup";
   } catch (err: any) {
     console.error('Error:', err);
     setError(err.message || "An error occurred while creating the order");
@@ -112,6 +113,35 @@ const addProduct = async () => {
 
   return (
     <>
+      <Head>
+        <title>Free Fire Top Up - Buy Diamonds at Best Price | Game Shop</title>
+        <meta name="description" content="Buy Free Fire diamonds at the best prices. Instant top-up service for Free Fire Indonesia. Get 50 to 10400 diamonds with secure payment methods." />
+        <meta name="keywords" content="free fire top up, free fire diamonds, free fire indonesia, free fire diamond purchase, free fire recharge, free fire diamond price" />
+        <meta property="og:title" content="Free Fire Top Up - Buy Diamonds at Best Price" />
+        <meta property="og:description" content="Get Free Fire diamonds instantly at competitive prices. Secure payment methods and fast delivery." />
+        <meta property="og:image" content="/freefire.jpg" />
+        <meta property="og:url" content="https://yourdomain.com/game" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Free Fire Diamonds",
+            "description": "Purchase Free Fire diamonds for your gaming account",
+            "brand": {
+              "@type": "Brand",
+              "name": "Free Fire"
+            },
+            "offers": {
+              "@type": "AggregateOffer",
+              "priceCurrency": "INR",
+              "lowPrice": "65",
+              "highPrice": "8800",
+              "offerCount": "16"
+            }
+          })}
+        </script>
+      </Head>
       <div className="min-h-screen bg-white dark:bg-gray-900">
        <Header/>
        
