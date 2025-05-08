@@ -3,10 +3,22 @@ import Link from "next/link";
 import Footer from "../component/Footer";
 import Header from "../component/Header";
 import Uploadq from "../component/upload";
+import Head from "next/head";
 
 export default function page() {
   return (
     <>
+    <Head>
+        <title>Gaming Top-Up Hub | Free Fire & Mobile Legends Diamond Top-Up</title>
+        <meta name="description" content="Get instant Free Fire and Mobile Legends diamonds at the best prices in Nepal. Fast, secure and reliable top-up service with 24/7 support. Best rates guaranteed!" />
+        <meta name="keywords" content="Free Fire topup Nepal, FF diamond topup, Mobile Legends topup, MLBB diamonds, gaming topup service, Garena Free Fire recharge, cheap FF diamonds, secure game topup" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Gaming Top-Up Hub | Free Fire & Mobile Legends Diamond Top-Up" />
+        <meta property="og:description" content="Your trusted source for Free Fire and Mobile Legends diamond top-ups. Best prices in Nepal with instant delivery and secure payments." />
+        <meta property="og:type" content="website" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_BASE_URL}`} />
+      </Head>
       <div className="min-h-screen bg-white dark:bg-gray-900">
         <Header />
 
