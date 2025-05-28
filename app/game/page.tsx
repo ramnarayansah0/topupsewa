@@ -12,48 +12,48 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 export default function page() {
   const [price,setPrice]=useState("Click On Diamond")
   //this is for left part
-  function addText55(){
-    setPrice("55 (60💎)")
+  function addText95(){
+    setPrice("95 (115💎)")
   }
-  function addText220(){
-    setPrice("220 (60💎)")
+  function addText190(){
+    setPrice("190 (240💎)")
   }
-  function addText440(){
-    setPrice("440 (60💎)")
+  function addText285(){
+    setPrice("285 (335💎)")
   }
-  function addText770(){
-    setPrice("770 (60💎)")
+  function addText380(){
+    setPrice("380 (480💎)")
   }
-  function addText1100(){
-    setPrice("1100 (60💎)")
+  function addText475(){
+    setPrice("475 (610💎)")
   }
-  function addText4400(){
-    setPrice("4400 (5200💎)")
+  function addText570(){
+    setPrice("570 (725💎)")
   }
-  function addText1100l(){
-    setPrice("1100 (60💎)")
+  function addText1425(){
+    setPrice("1425 (1850💎)")
   }
-  function addText220l(){
-    setPrice("220 (60💎)")
+  function addText1900(){
+    setPrice("1900 (2530💎)")
   }
 // this is for right part
 function addText110(){
   setPrice("110 (60💎)")
 }
-function addText330(){
-  setPrice("330 (60💎)")
+function addText2375(){
+  setPrice("2375 (3140💎)")
 }
-function addText550(){
-  setPrice("550 (60💎)")
+function addText2850(){
+  setPrice("2850 (3770💎)")
 }
-function addText1000(){
-  setPrice("1000 (60💎)")
+function addText3325(){
+  setPrice("3325 (4380💎)")
 }
-function addText2200(){
-  setPrice("2200 (60💎)")
+function addText3800(){
+  setPrice("3800 (5060💎)")
 }
-function addText8800(){
-  setPrice("8800 (60💎)")
+function addText7600(){
+  setPrice("7600 (10120💎)")
 }
 function addText220w(){
   setPrice("220 (60💎)")
@@ -161,36 +161,36 @@ const addProduct = async () => {
             <div className="grid grid-cols-2 gap-4 h-full">
               {/* Left Side */}
               <div className="col-span-1 flex flex-col gap-4">
-                <button onClick={addText55}>
-                   <Price price="65" diamond="50 Diamond" />
+                <button onClick={addText95}>
+                   <Price price="95" diamond="115 Diamond" />
                 </button>
                 
-                <button onClick={addText220}>
-                   <Price price="220" diamond="260 Diamond" />
+                <button onClick={addText190}>
+                   <Price price="190" diamond="240 Diamond" />
                 </button>
 
-                <button onClick={addText440}>
-                   <Price price="440" diamond="520 Diamond" />
+                <button onClick={addText285}>
+                   <Price price="285" diamond="335 Diamond" />
                 </button>
 
-                <button onClick={addText770}>
-                   <Price price="770" diamond="910 Diamond" />
+                <button onClick={addText380}>
+                   <Price price="380" diamond="480 Diamond" />
                 </button>
 
-                <button onClick={addText1100}>
-                   <Price price="1100" diamond="1300 Diamond" />
+                <button onClick={addText475}>
+                   <Price price="475" diamond="610 Diamond" />
                 </button>
 
-                <button onClick={addText4400}>
-                   <Price price="4400" diamond="5200 Diamond" />
+                <button onClick={addText570}>
+                   <Price price="570" diamond="725 Diamond" />
                 </button>
 
-                <button onClick={addText1100l}>
-                   <Price price="1100" diamond="1300 Diamond" />
+                <button onClick={addText1425}>
+                   <Price price="1425" diamond="1850 Diamond" />
                 </button>
 
-                <button onClick={addText220l}>
-                   <Price price="220" diamond="260 Diamond" />
+                <button onClick={addText1900}>
+                   <Price price="1900" diamond="2530 Diamond" />
                 </button>
                 
               </div>
@@ -198,30 +198,30 @@ const addProduct = async () => {
               {/* Right Side */}
               <div className="col-span-1 flex flex-col gap-4">
                 <button onClick={addText110}>
-                   <Price price="110" diamond="130 Diamond" />
+                   <Price price="855" diamond="1090 Diamond" />
                 </button>
 
                
-                <button onClick={addText330}>
-                   <Price price="330" diamond="390 Diamond" />
+                <button onClick={addText2375}>
+                   <Price price="2375" diamond="3140 Diamond" />
                 </button>
-                <button onClick={addText550}>
-                   <Price price="550" diamond="650 Diamond" />
+                <button onClick={addText2850}>
+                   <Price price="2850" diamond="3770 Diamond" />
                 </button>
-                <button onClick={addText1000}>
-                   <Price price="1000" diamond="1180 Diamond" />
+                <button onClick={addText3325}>
+                   <Price price="3325" diamond="4380 Diamond" />
                 </button>
-                <button onClick={addText2200}>
-                   <Price price="2200" diamond="2600 Diamond" />
+                <button onClick={addText3800}>
+                   <Price price="3800" diamond="5060 Diamond" />
                 </button>
-                <button onClick={addText8800}>
-                   <Price price="8800" diamond="10400 Diamond" />
+                <button onClick={addText7600}>
+                   <Price price="7600" diamond="10120 Diamond" />
                 </button>
                 <button onClick={addText220w}>
-                   <Price price="220" diamond="260 Diamond" />
+                   <Price price="not fix" diamond="Monthly" />
                 </button>
                 <button onClick={addText80w}>
-                   <Price price="80" diamond="95 Diamond" />
+                   <Price price="not fix" diamond=" Weekly" />
                 </button>
               </div>
             </div>
