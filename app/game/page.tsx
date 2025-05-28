@@ -148,12 +148,20 @@ const addProduct = async () => {
 
         <main className="mx-4 mt-11">
           <div className="rounded-lg">
-            <img className="w-auto rounded-lg" src="/freefire.jpg" alt="Free Fire" />
+            <img className="w-52 rounded-lg" src="/topupfree.jpg" alt="Free Fire topup" loading="lazy" />
           </div>
 
           <div className="mt-10 ml-4">
-            <h1 className="font-extrabold text-2xl text-gray-900 dark:text-white">Free Fire (Indonesia)</h1>
-            <h2 className="text-lg text-gray-700 dark:text-gray-300">Rs 85 - Rs 9,870</h2>
+            <h1 className="font-extrabold text-2xl text-gray-900 dark:text-white">Free Fire Topup</h1>
+            <h2 className="text-lg text-gray-700 dark:text-gray-300">Rs 115 - Rs 7000+</h2>
+          <p className="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+            Experience the ultimate Free Fire gaming with our premium diamond top-up service. Get instant delivery of Free Fire diamonds at competitive prices. Our secure payment system ensures safe transactions for all your Free Fire recharge needs. Whether you're looking for Free Fire diamond purchase for character skins, weapons, or battle passes, we've got you covered with the best Free Fire top-up deals in Ne.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm">Instant Delivery</span>
+            <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-full text-sm">Secure Payment</span>
+            <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-200 rounded-full text-sm">24/7 Support</span>
+          </div>
           </div>
 
           {/* Left and Right Component Placement */}
@@ -226,7 +234,7 @@ const addProduct = async () => {
               </div>
             </div>
           </div>
-          <h1>Price: {price}</h1>
+          <h1 className="text-center text-gray-900 dark:text-white font-extrabold text-lg mb-2  ">Price: {price}</h1>
           <div className="bg-[#336666] dark:bg-[#1a3333] mt-10 pb-3 rounded-lg shadow-lg">
             <h1 className="text-white font-extrabold text-lg mb-2">Player ID (UID)</h1>
             <input 
@@ -271,11 +279,11 @@ const addProduct = async () => {
           </button>
 
           <div className="mt-8 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white mb-4">How to purchase Free Fire BD Diamonds in Game Shop Np:</h1>
+            <h1 className="text-xl font-bold text-gray-900 dark:text-white mb-4">How to purchase Free Fire BD Diamonds in Free Fire Top Up:</h1>
             <div className="space-y-2 text-gray-700 dark:text-gray-300">
-              <p>1. First, select the Diamond Pack denomination.</p>
-              <p>2. Next, enter your Free Fire Player ID.</p>
-              <p>3. After that, check out and choose your payment method.</p>
+              <p>1. First, select the Diamond Pack you want to buy.</p>
+              <p>2. Next, enter your Free Fire Player UID , Name and WhatsApp Number.</p>
+              <p>3. After that, check out and choose your payment method (eSEWA, kHALTI).</p>
               <p>4. After payment is made, the Diamond you purchased will be credited to your account within 5 minutes</p>
             </div>
           </div>
