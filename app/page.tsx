@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Footer from "./component/Footer";
 import Get from "./component/Get";
 import Header from "./component/Header";
@@ -8,6 +9,37 @@ export default async function page(){
 
 
   return(
+    <>
+     <Head>
+  <title>Free Fire Top-Up - Cheap Diamonds & Instant Recharge | Game Shop</title>
+  <meta name="description" content="Top-up Free Fire diamonds instantly at the lowest prices. Buy 50 to 10400 FF diamonds with secure and fast delivery across Indonesia and India." />
+  <meta name="keywords" content="free fire top-up, free fire diamond top-up, buy free fire diamonds, cheap free fire recharge, instant ff diamond top-up, ff diamonds indonesia, free fire diamond price" />
+  <meta property="og:title" content="Free Fire Diamond Top-Up - Instant & Affordable Recharge" />
+  <meta property="og:description" content="Buy Free Fire diamonds online at the best prices. Fast FF diamond top-up with secure payment for Indonesia and India." />
+  <meta property="og:image" content="/freefire.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/game" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Free Fire Diamond Top-Up",
+      "description": "Instant and secure Free Fire diamond recharge with multiple top-up options from 50 to 10400 diamonds.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Free Fire"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "INR",
+        "lowPrice": "65",
+        "highPrice": "8800",
+        "offerCount": "16"
+      }
+    })}
+  </script>
+</Head>
+    
   <div className="min-h-screen bg-white dark:bg-gray-900">
   
 <Header/>
@@ -45,5 +77,7 @@ export default async function page(){
   </div>
 </main>
 <Footer/>
-  </div>)
+  </div>
+  </>
+)
 } 
