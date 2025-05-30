@@ -9,6 +9,12 @@ export default async function page(){
 
 
   return(
+    <>
+    <Head>
+  <title>Free Fire Top-Up - Cheap Diamonds & Instant Recharge | Game Shop</title>
+  <meta name="description" content="Top-up Free Fire diamonds instantly at the lowest prices. Buy 50 to 10400 FF diamonds with secure and fast delivery across Indonesia and India." />
+  <meta name="keywords" content="free fire top-up, free fire diamond top-up, buy free fire diamonds, cheap free fire recharge, instant ff diamond top-up, ff diamonds indonesia, free fire diamond price" />
+    
   <div className="min-h-screen bg-white dark:bg-gray-900">
   
 <Header/>
@@ -49,4 +55,4 @@ export default async function page(){
   </div>
   </>
 )
-} 
+}
