@@ -26,7 +26,7 @@ export default function page() {
           {/* QR Code Section */}
           <div className="text-center">
             <h1 className="text-3xl font-extrabold text-[#2E8B57] dark:text-[#4CAF50]">Please Scan QR for Payment</h1>
-            <img className="mx-auto mt-6 w-60  object-contain rounded-lg shadow-xl" src="/esewa.jpg" alt="freefire topup qr" />
+            <img className="mx-auto mt-6 w-60  object-contain rounded-lg shadow-xl" src="/onlyQR.jpg" alt="freefire topup qr" />
           </div>
 
           {/* Upload Screenshot Section */}
