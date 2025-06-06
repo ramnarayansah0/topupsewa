@@ -14,7 +14,7 @@ export default async function page() {
         <meta property="og:title" content="Free Fire Diamond Top-Up - Instant & Affordable Recharge" />
         <meta property="og:description" content="Buy Free Fire diamonds online at the best prices. Fast FF diamond top-up with secure payment for Indonesia and India." />
         <meta property="og:image" content="/freefire.jpg" />
-        <meta property="og:url" content="https://yourdomain.com/game" />
+        <meta property="og:url" content="https://topupsewa.games/game" />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">
           {JSON.stringify({
