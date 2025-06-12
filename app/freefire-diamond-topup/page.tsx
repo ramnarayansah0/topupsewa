@@ -120,7 +120,7 @@ const addProduct = async () => {
         <meta property="og:title" content="Free Fire Top Up - Buy Diamonds at Best Price" />
         <meta property="og:description" content="Get Free Fire diamonds instantly at competitive prices. Secure payment methods and fast delivery." />
         <meta property="og:image" content="/freefire.jpg" />
-        <meta property="og:url" content="https://topupsewa.games/game" />
+        <meta property="og:url" content="https://topupsewa.games/freefire-diamond-topup" />
         <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">
           {JSON.stringify({

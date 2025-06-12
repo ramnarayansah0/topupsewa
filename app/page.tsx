@@ -43,7 +43,7 @@ export default async function page() {
           <h1 className="learn text-center p-2 bg-red-50 dark:bg-red-900/20 mb-2 text-gray-900 dark:text-white">Product</h1>
 
           <div className="flex justify-center flex-wrap ml-2 gap-4">
-            <ProductCard name="FreeFire" price="Rs 65 -- Rs 1000" img="freefire.jpg" Url="/game"/>
+            <ProductCard name="FreeFire" price="Rs 65 -- Rs 1000" img="freefire.jpg" Url="/freefire-diamond-topup"/>
             <ProductCard name="Coming Soon" price="$1.00" img="comming.png"/>
             <ProductCard name="Coming Soon" price="$1.00" img="comming.png"/>
             <ProductCard name="Coming Soon" price="$1.00" img="comming.png"/>

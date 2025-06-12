@@ -5,7 +5,7 @@ export default async function Sitemap(): Promise<MetadataRoute.Sitemap> {
     
     return [
         {
-            url: `${baseUrl}/game`,
+            url: `${baseUrl}/freefire-diamond-topup`,
             lastModified: new Date(),
             changeFrequency: 'daily',
             priority: 0.7
