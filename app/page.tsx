@@ -21,7 +21,7 @@ export default async function page() {
             "@context": "https://schema.org",
             "@type": "Product",
             "name": "Free Fire Diamonds",
-            "description": "Purchase Free Fire diamonds for your gaming account",
+            "description": "Purchase Free Fire diamond for your gaming account",
             "brand": {
               "@type": "Brand",
               "name": "Free Fire"
