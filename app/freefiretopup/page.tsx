@@ -58,7 +58,7 @@ export default function page() {
               onClick={() => {
                 const dialog = document.createElement('dialog');
                 dialog.innerHTML = `
-                  <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-xl">
+                  <div class="p-7 bg-white dark:bg-gray-800 rounded-lg shadow-xl">
                     <h3 class="text-xl font-bold text-green-600 dark:text-green-400 mb-4">Order Successful!</h3>
                     <p class="text-gray-700 dark:text-gray-300">Your order has been placed successfully.</p>
                     <button class="mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600" onclick="this.closest('dialog').close()">Close</button>
