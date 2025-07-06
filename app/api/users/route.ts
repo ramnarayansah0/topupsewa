@@ -88,7 +88,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Fix: Extract numeric part from price string
-   
+    // Note: Price is already a string, no extraction needed
 
     console.log('Creating order with data:', body);
     const user = await prisma.project.create({
