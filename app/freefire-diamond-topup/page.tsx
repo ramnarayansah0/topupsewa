@@ -168,7 +168,7 @@ const addProduct = async () => {
           <div className="bg-[#336666] dark:bg-[#1a3333] rounded-xl w-full  mt-8 p-4">
             <div className="grid grid-cols-2 gap-4 h-full">
               {/* Left Side */}
-              <div className="col-span-1 flex flex-col gap-4">
+              <div className="col-span-1 flex flex-col gap-4  ">
                 <button onClick={addText95}>
                    <Price price="95" diamond="115 Diamond" />
                 </button>
