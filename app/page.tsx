@@ -43,26 +43,26 @@ export default async function page() {
           <h1 className="learn text-center p-2 bg-red-50 dark:bg-red-900/20 mb-2 text-gray-900 dark:text-white">Games</h1>
 
           <div className="flex justify-center flex-wrap ml-2 gap-4">
-            <ProductCard name="FreeFire" price="Rs 65 -- Rs 1000" img="freefire.jpg" Url="/freefire-diamond-topup"/>
+            <ProductCard name="FreeFire" price="Rs 95 -- Rs 1000" img="freefire.jpg" Url="/freefire-diamond-topup"/>
             <ProductCard name="PUBG" price="Rs 99-1000+" img="pugb-comp.jpg" Url="/topup/pubg"/>
-            <ProductCard name="Coming Soon" price="$1.00" img="comming.png"/>
-            <ProductCard name="Coming Soon" price="$1.00" img="comming.png"/>
+            <ProductCard name="Call Of Duty" price="$.00" img="callofduty (1).jpg" Url="/topup/callofduty"/>
+            <ProductCard name="Mobile Legends" price="$1.00" img="mobilelegends1.jpg" Url="topup/mobilelegends"/>
           </div>
 
           <h1 className="learn text-center p-2 bg-red-50 dark:bg-red-900/20 mt-2 mb-2 text-gray-900 dark:text-white">Product</h1>
           <div className="flex justify-center flex-wrap ml-2 gap-4">
             <ProductCard name="Github Student" price=" Rs 99 Only" img="pugb-comp.jpg" Url="/product/githubstudentpack" />
-            <ProductCard name="Cloud Storage" price="Rs 99 Only" img="comming.png" Url="/product/cloudstorage"/>
-            <ProductCard name="Facebook Fans" price="Rs 99-1000" img="comming.png" Url="/product/facebookfollowers"/>
-            <ProductCard name="Instagram Fans" price="Rs 99-1000" img="comming.png" Url="/product/instagramfollowers"/>
+            <ProductCard name="Cloud Storage" price="Rs 99 Only" img="onedrive.png" Url="/product/cloudstorage"/>
+            <ProductCard name="Tik Tok Fans" price="Rs 99-1000" img="tiktok.jpg" Url="/product/facebookfollowers"/>
+            <ProductCard name="Instagram Fans" price="Rs 99-1000" img="instagram (1).jpg" Url="/product/instagramfollowers"/>
           </div>
 
           <h1 className="learn text-center p-2 bg-red-50 dark:bg-red-900/20 mt-2 mb-2 text-gray-900 dark:text-white">Suscription</h1>
           <div className="flex justify-center flex-wrap ml-2 gap-4">
-            <ProductCard name="Netflix" price="$6.00" img="comming.png" Url="/subscription/netfilx" />
-            <ProductCard name="Amazon Prime" price="$1.00" img="comming.png" Url="/subscription/amazoneprime" />
-            <ProductCard name="Youtube Premium" price="$1.00" img="comming.png" Url="/subscription/youtubepremium" />
-            <ProductCard name="Canva Pro" price="$1.00" img="comming.png" Url="/subscription/canvapro" />
+            <ProductCard name="Netflix" price="$6.00" img="netfilx.jpg" Url="/subscription/netfilx" />
+            <ProductCard name="Amazon Prime" price="$1.00" img="prime.jpg" Url="/subscription/amazoneprime" />
+            <ProductCard name="Youtube Premium" price="$1.00" img="youtube.jpg" Url="/subscription/youtubepremium" />
+            <ProductCard name="Canva Pro" price="$1.00" img="canva.jpg" Url="/subscription/canvapro" />
           </div>
           
           <div className="h-[50vh] overflow-y-auto">
