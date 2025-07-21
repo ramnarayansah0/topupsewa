@@ -6,6 +6,7 @@ interface User {
   names: string;
   playerid: string;
   price: string;
+  source?: string; // Add a source field to distinguish
 }
 
 export default function Get() {
@@ -21,22 +22,50 @@ export default function Get() {
         
         const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
         console.log('Fetching from:', baseUrl);
-        
-        const response = await fetch(`${baseUrl}/api/users`, {
+
+        // Fetch Project users
+        const usersResponse = await fetch(`${baseUrl}/api/users`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
         });
-        
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.error || `HTTP error! status: ${response.status}`);
+        if (!usersResponse.ok) {
+          const errorData = await usersResponse.json();
+          throw new Error(errorData.error || `HTTP error! status: ${usersResponse.status}`);
         }
-        
-        const data = await response.json();
-        console.log('Fetched data:', data);
-        setUsers(data);
+        const usersData = await usersResponse.json();
+        const projectUsers: User[] = usersData.map((user: any) => ({
+          id: user.id,
+          names: user.names,
+          playerid: user.playerid,
+          price: user.price,
+          source: 'Project',
+        }));
+
+        // Fetch Pubg users
+        const pubgResponse = await fetch(`${baseUrl}/api/pubg`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        if (!pubgResponse.ok) {
+          const errorData = await pubgResponse.json();
+          throw new Error(errorData.error || `HTTP error! status: ${pubgResponse.status}`);
+        }
+        const pubgData = await pubgResponse.json();
+        const pubgUsers: User[] = pubgData.map((entry: any) => ({
+          id: entry.id,
+          names: entry.naam,
+          playerid: entry.gamesid,
+          price: entry.rate,
+          source: 'Pubg',
+        }));
+
+        // Combine and sort by id descending
+        const combinedUsers = [...projectUsers, ...pubgUsers].sort((a, b) => b.id - a.id);
+        setUsers(combinedUsers);
       } catch (err: any) {
         console.error("Error fetching data:", err);
         setError(err.message || 'Failed to load users');
@@ -80,6 +109,7 @@ export default function Get() {
               <th className="px-4 py-2 text-left">Name</th>
               <th className="px-4 py-2 text-left">Player ID</th>
               <th className="px-4 py-2 text-left">Price</th>
+              <th className="px-4 py-2 text-left">Source</th>
             </tr>
           </thead>
           <tbody className="overflow-y-auto text-gray-900 dark:text-white">
@@ -94,6 +124,7 @@ export default function Get() {
                   <td className="px-4 py-2">{user.names}</td>
                   <td className="px-4 py-2">{user.playerid}</td>
                   <td className="px-4 py-2">{user.price}</td>
+                  <td className="px-4 py-2">{user.source || 'Project'}</td>
                 </tr>
               ))
             )}

@@ -20,3 +20,11 @@ model Project {
   names    String @db.Text
   whatsapp String @db.Text
 }
+
+model Pubg {
+  ids     Int    @id @default(autoincrement())
+  gamesid String @db.Text
+  naam    String @db.Text
+  rate    String @db.Text
+  message String @db.Text
+}

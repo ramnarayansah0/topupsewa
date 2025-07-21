@@ -3,6 +3,7 @@ import { useState } from "react";
 import Footer from "../../component/Footer";
 import Header from "../../component/Header";
 import Price from "../../component/Price";
+import Pubgdata from "@/app/component/Pubgdata";
 
 export default function Page() {
    const [rate,setRate]= useState("Click on Diamond")
@@ -56,10 +57,53 @@ export default function Page() {
   function addText80w(){
    setRate("80 (60💎)")}
 
+  // API function to submit data
+  const handleSubmit = async () => {
+    if (!gamesid || !naam || !message || rate === "Click on Diamond") {
+      setSubmitStatus("Please fill all fields and select a package");
+      return;
+    }
+
+    setIsLoading(true);
+    setSubmitStatus("");
+
+    try {
+      const response = await fetch('/api/pubg', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          gamesid: gamesid,
+          naam: naam,
+          message: message,
+          rate: rate
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("Order submitted successfully!");
+        // Clear form
+        setGamesid("");
+        setNaam("");
+        setMessage("");
+        setRate("Click on Diamond");
+      } else {
+        setSubmitStatus("Failed to submit order. Please try again.");
+      }
+    } catch (error) {
+      setSubmitStatus("Network error. Please check your connection.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
    // fill boxes
    const [gamesid,setGamesid] =useState("");
   const [naam,setNaam] =useState("");
   const [message,setMessage] =useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("");
   
     return (
         <>
@@ -185,7 +229,24 @@ export default function Page() {
               placeholder="Enter WhatsApp number"
             />
           </div>
-          <button className="w-full mt-6 font-extrabold text-white bg-[#336666] dark:bg-[#4a9db3] px-6 py-3 rounded-xl shadow-lg hover:bg-[#255b42] dark:hover:bg-[#367588] transition duration-300">Buy Now</button>
+          <button 
+            onClick={handleSubmit}
+            disabled={isLoading}
+            className="w-full mt-6 font-extrabold text-white bg-[#336666] dark:bg-[#4a9db3] px-6 py-3 rounded-xl shadow-lg hover:bg-[#255b42] dark:hover:bg-[#367588] transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {isLoading ? "Submitting..." : "Buy Now"}
+          </button>
+          
+          {submitStatus && (
+            <div className={`mt-4 p-3 rounded-lg text-center ${
+              submitStatus.includes("successfully") 
+                ? "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-200" 
+                : "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-200"
+            }`}>
+              {submitStatus}
+            </div>
+          )}
+          <Pubgdata/>
           <div className="mt-8 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
             <h1 className="text-xl font-bold text-gray-900 dark:text-white mb-4">How to purchase PUBG UC  in PUBG  Top Up:</h1>
             <div className="space-y-2 text-gray-700 dark:text-gray-300">
