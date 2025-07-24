@@ -40,7 +40,7 @@ export default function Get() {
           names: user.names,
           playerid: user.playerid,
           price: user.price,
-          source: 'Project',
+          source: 'FreeFire',
         }));
 
         // Fetch Pubg users
