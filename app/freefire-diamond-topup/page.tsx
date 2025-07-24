@@ -38,7 +38,7 @@ export default function page() {
   }
 // this is for right part
 function addText110(){
-  setPrice("110 (60💎)")
+  setPrice("855 (1090💎)")
 }
 function addText2375(){
   setPrice("2375 (3140💎)")
