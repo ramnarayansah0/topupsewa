@@ -65,7 +65,7 @@ export default function page() {
             </div>
           </div>
 
-          {/* Buy Now Button */}
+          {/* Buy Now Button ddd*/}
           <Link href="/">
             <button 
               className="font-extrabold text-white bg-[#2E8B57] dark:bg-[#4CAF50] px-8 py-4 mx-auto mt-12 rounded-xl block text-center hover:bg-[#255b42] dark:hover:bg-[#3d8b40] transition ease-in-out duration-300 shadow-lg"
