@@ -4,8 +4,18 @@ import Footer from "../component/Footer";
 import Header from "../component/Header";
 import Uploadq from "../component/upload";
 import Head from "next/head";
+import { useState } from "react";
 
 export default function page() {
+  const [ram,setRam] = useState("onlyQR.jpg")
+  function esewa(){
+      setRam("onlyQR.jpg");
+  }
+
+  function khalti(){
+      setRam("khalti.jpg")
+  }
+  
   return (
     <>
     <Head>
@@ -26,7 +36,11 @@ export default function page() {
           {/* QR Code Section */}
           <div className="text-center">
             <h1 className="text-3xl font-extrabold text-[#2E8B57] dark:text-[#4CAF50]">Please Scan QR for Payment</h1>
-            <img className="mx-auto mt-6 w-60  object-contain rounded-lg shadow-xl" src="/onlyQR.jpg" alt="freefire topup qr" />
+            <img className="mx-auto mt-6 w-60 h-80 object-contain rounded-lg shadow-xl" src={ram} alt="freefire topup qr" />
+            <div className="space-x-7 mt-9">
+            <button className="bg-blue-400 rounded-md hover:bg-blue-600 p-3" onClick={esewa}>Esewa</button> <button className="bg-blue-100 hover:bg-blue-600 rounded-md p-3" onClick={khalti}>Khalti</button>
+
+            </div>
           </div>
 
           {/* Upload Screenshot Section */}
