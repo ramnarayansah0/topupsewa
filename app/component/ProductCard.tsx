@@ -1,6 +1,13 @@
 import Link from "next/link";
 
-export default function ProductCard(props: any) {
+interface ProductCardProps {
+  img: string;
+  name: string;
+  price: string;
+  Url?: string;
+}
+
+export default function ProductCard(props: ProductCardProps) {
     return (
         <div className="bg-amber-400 dark:bg-amber-900 rounded-lg p-4">
             <img 

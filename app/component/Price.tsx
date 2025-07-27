@@ -1,4 +1,9 @@
-export default function Price(props:any){
+interface PriceProps {
+  price: string;
+  diamond: string;
+}
+
+export default function Price(props: PriceProps) {
     return(
         <>
         <div>

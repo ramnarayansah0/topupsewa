@@ -44,8 +44,8 @@ export default function Form() {
       
       setSuccess(true);
       router.refresh(); // Refresh the page to show updated data
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
     } finally {
       setLoading(false);
     }

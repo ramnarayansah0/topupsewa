@@ -35,13 +35,18 @@ export default function Get() {
           throw new Error(errorData.error || `HTTP error! status: ${usersResponse.status}`);
         }
         const usersData = await usersResponse.json();
-        const projectUsers: User[] = usersData.map((user: any) => ({
-          id: user.id,
-          names: user.names,
-          playerid: user.playerid,
-          price: user.price,
-          source: 'FreeFire',
-        }));
+        const projectUsers: User[] = usersData.map((user: unknown) => {
+          if (user && typeof user === 'object' && 'id' in user && 'names' in user && 'playerid' in user && 'price' in user) {
+            return {
+              id: Number(user.id),
+              names: String(user.names),
+              playerid: String(user.playerid),
+              price: String(user.price),
+              source: 'FreeFire',
+            };
+          }
+          throw new Error('Invalid user data structure');
+        });
 
         // Fetch Pubg users
         const pubgResponse = await fetch(`${baseUrl}/api/pubg`, {
@@ -55,20 +60,25 @@ export default function Get() {
           throw new Error(errorData.error || `HTTP error! status: ${pubgResponse.status}`);
         }
         const pubgData = await pubgResponse.json();
-        const pubgUsers: User[] = pubgData.map((entry: any) => ({
-          id: entry.id,
-          names: entry.naam,
-          playerid: entry.gamesid,
-          price: entry.rate,
-          source: 'Pubg',
-        }));
+        const pubgUsers: User[] = pubgData.map((entry: unknown) => {
+          if (entry && typeof entry === 'object' && 'id' in entry && 'naam' in entry && 'gamesid' in entry && 'rate' in entry) {
+            return {
+              id: Number(entry.id),
+              names: String(entry.naam),
+              playerid: String(entry.gamesid),
+              price: String(entry.rate),
+              source: 'Pubg',
+            };
+          }
+          throw new Error('Invalid pubg entry data structure');
+        });
 
         // Combine and sort by id descending
         const combinedUsers = [...projectUsers, ...pubgUsers].sort((a, b) => b.id - a.id);
         setUsers(combinedUsers);
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error("Error fetching data:", err);
-        setError(err.message || 'Failed to load users');
+        setError(err instanceof Error ? err.message : 'Failed to load users');
       } finally {
         setLoading(false);
       }

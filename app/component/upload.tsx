@@ -11,9 +11,11 @@ export default function Uploadq() {
       
       <CldUploadWidget
         uploadPreset="gdbyt2f"
-        onSuccess={(result: any) => {
-          const info = result.info as { public_id: string };
-          setPublicId(info.public_id);
+        onSuccess={(result: unknown) => {
+          if (result && typeof result === 'object' && 'info' in result && result.info && typeof result.info === 'object' && 'public_id' in result.info) {
+            const info = result.info as { public_id: string };
+            setPublicId(info.public_id);
+          }
         }}
       >
         {({ open }) => (

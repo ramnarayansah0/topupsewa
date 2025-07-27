@@ -3,13 +3,13 @@ import Price from "../component/Price";
 import Header from "../component/Header";
 import Footer from "../component/Footer";
 import { useState } from "react";
-import Link from "next/link";
+
 import Head from 'next/head';
 
 // Update API URL to use port 3000
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
-export default function page() {
+export default function Page() {
   const [price,setPrice]=useState("Click On Diamond")
   //this is for left part
   function addText95(){
@@ -103,9 +103,9 @@ const addProduct = async () => {
     
     // Navigate to checkout page
     window.location.href = "/freefiretopup";
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error('Error:', err);
-    setError(err.message || "An error occurred while creating the order");
+    setError(err instanceof Error ? err.message : "An error occurred while creating the order");
   } finally {
     setIsLoading(false);
   }
@@ -155,7 +155,7 @@ const addProduct = async () => {
             <h1 className="font-extrabold text-2xl text-gray-900 dark:text-white">Free Fire Topup</h1>
             <h2 className="text-lg text-gray-700 dark:text-gray-300">Rs 115 - Rs 7000+</h2>
           <p className="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Experience the ultimate Free Fire gaming with our premium diamond top-up service. Get instant delivery of Free Fire diamonds at competitive prices. Our secure payment system ensures safe transactions for all your Free Fire recharge needs. Whether you're looking for Free Fire diamond purchase for character skins, weapons, or battle passes, we've got you covered with the best Free Fire top-up deals in Ne.
+            Experience the ultimate Free Fire gaming with our premium diamond top-up service. Get instant delivery of Free Fire diamonds at competitive prices. Our secure payment system ensures safe transactions for all your Free Fire recharge needs. Whether you&apos;re looking for Free Fire diamond purchase for character skins, weapons, or battle passes, we&apos;ve got you covered with the best Free Fire top-up deals in Ne.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm">Instant Delivery</span>

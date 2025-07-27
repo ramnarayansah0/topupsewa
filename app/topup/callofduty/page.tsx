@@ -1,12 +1,10 @@
-import { useState } from "react";
-
-export default function Callofduty(){
+export default function Callofduty() {
    
     return(
         <>
         <div>
             <div>Payment</div>
-            <img src="/${payment}"></img>
+            <img src="/payment.jpg" alt="Payment" />
 
         <button >Khalti</button>
         <button>Esewa</button>

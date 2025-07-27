@@ -6,7 +6,7 @@ import Uploadq from "../component/upload";
 import Head from "next/head";
 import { useState } from "react";
 
-export default function page() {
+export default function Page() {
   const [ram,setRam] = useState("onlyQR.jpg")
   function esewa(){
       setRam("onlyQR.jpg");

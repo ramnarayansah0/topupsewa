@@ -15,7 +15,7 @@ export async function OPTIONS() {
 }
 
 // GET: Fetch all users
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     console.log('GET request received');
     
@@ -105,10 +105,10 @@ export async function POST(request: NextRequest) {
       message: "Order created successfully",
       order: user
     }, { status: 201 }));
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error creating order:', error);
 
-    if (error.code === 'P2002') {
+    if (error && typeof error === 'object' && 'code' in error && error.code === 'P2002') {
       return corsResponse(NextResponse.json(
         { error: "Duplicate entry" },
         { status: 409 }

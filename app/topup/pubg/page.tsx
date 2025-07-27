@@ -91,7 +91,7 @@ export default function Page() {
       } else {
         setSubmitStatus("Failed to submit order. Please try again.");
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus("Network error. Please check your connection.");
     } finally {
       setIsLoading(false);
@@ -117,7 +117,7 @@ export default function Page() {
             <h1 className="font-extrabold text-2xl text-gray-900 dark:text-white">PUBG  Topup</h1>
             <h2 className="text-lg text-gray-700 dark:text-gray-300">Rs 135 - Rs 12950+</h2>
           <p className="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
-            Experience the ultimate PUBG gaming with our premium UC top-up service. Get instant delivery of PUBG UC at competitive prices. Our secure payment system ensures safe transactions for all your PUBG recharge needs. Whether you're looking for PUBG UC purchase for character skins, weapons, or battle passes, we've got you covered with the best UC top-up deals in Nepal.
+            Experience the ultimate PUBG gaming with our premium UC top-up service. Get instant delivery of PUBG UC at competitive prices. Our secure payment system ensures safe transactions for all your PUBG recharge needs. Whether you&apos;re looking for PUBG UC purchase for character skins, weapons, or battle passes, we&apos;ve got you covered with the best UC top-up deals in Nepal.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 rounded-full text-sm">Instant Delivery</span>
