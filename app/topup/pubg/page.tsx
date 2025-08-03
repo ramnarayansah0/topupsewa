@@ -91,6 +91,8 @@ export default function Page() {
       } else {
         setSubmitStatus("Failed to submit order. Please try again.");
       }
+       // Navigate to checkout page
+    window.location.href = "/freefiretopup";
     } catch {
       setSubmitStatus("Network error. Please check your connection.");
     } finally {

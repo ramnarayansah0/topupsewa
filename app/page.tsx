@@ -53,7 +53,7 @@ export default async function page() {
           <div className="flex justify-center flex-wrap ml-2 gap-4">
             <ProductCard name="Github Student" price=" Rs 99 Only" img="pugb-comp.jpg" Url="/product/githubstudentpack" />
             <ProductCard name="Cloud Storage" price="Rs 99 Only" img="onedrive.png" Url="/product/cloudstorage"/>
-            <ProductCard name="Tik Tok Fans" price="Rs 99-1000" img="tiktok.jpg" Url="/product/facebookfollowers"/>
+            <ProductCard name="Tik Tok Fans" price="Rs 99-1000" img="tiktok.jpg" Url="/product/tiktok"/>
             <ProductCard name="Instagram Fans" price="Rs 99-1000" img="instagram (1).jpg" Url="/product/instagramfollowers"/>
           </div>
 
