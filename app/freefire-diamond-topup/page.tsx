@@ -5,6 +5,7 @@ import Footer from "../component/Footer";
 import { useState } from "react";
 
 import Head from 'next/head';
+import Image from 'next/image';
 
 // Update API URL to use port 3000
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
@@ -148,7 +149,7 @@ const addProduct = async () => {
 
         <main className="mx-4 mt-11">
           <div className="rounded-lg">
-            <img className="w-52 rounded-lg" src="/topupfree.jpg" alt="Free Fire topup" loading="lazy" />
+            <Image className="w-52 rounded-lg" src="/topupfree.jpg" alt="Free Fire topup" width={208} height={208} loading="lazy" />
           </div>
 
           <div className="mt-10 ml-4">

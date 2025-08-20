@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from 'next/image';
 
 interface ProductCardProps {
   img: string;
@@ -10,9 +11,11 @@ interface ProductCardProps {
 export default function ProductCard(props: ProductCardProps) {
     return (
         <div className="bg-amber-400 dark:bg-amber-900 rounded-lg p-4">
-            <img 
+            <Image 
                 src={props.img} 
                 alt={props.name} 
+                width={128}
+                height={128}
                 className="w-32 h-32 mx-auto py-2"
             />
             <div className="description px-5 flex flex-col items-center">

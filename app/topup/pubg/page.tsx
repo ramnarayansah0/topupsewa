@@ -4,6 +4,7 @@ import Footer from "../../component/Footer";
 import Header from "../../component/Header";
 import Price from "../../component/Price";
 import Pubgdata from "@/app/component/Pubgdata";
+import Image from 'next/image';
 
 export default function Page() {
    const [rate,setRate]= useState("Click on UC")
@@ -113,7 +114,7 @@ export default function Page() {
         <Header/>
         <main className="mx-4 mt-11">
         <div className="rounded-lg">
-            <img className="w-52 rounded-lg" src="/pugb-comp.jpg" alt="Free Fire topup" loading="lazy" />
+            <Image className="w-52 rounded-lg" src="/pugb-comp.jpg" alt="Free Fire topup" width={208} height={208} loading="lazy" />
           </div>
           <div className="mt-10 ml-4">
             <h1 className="font-extrabold text-2xl text-gray-900 dark:text-white">PUBG  Topup</h1>

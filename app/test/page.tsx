@@ -20,7 +20,7 @@ export default function DropdownSelect() {
       {selectedOption === 'Banana' && (
         <div>
           <p>Selected: {selectedOption}</p>
-          <p>🍌 This is a banana! It's yellow and delicious.</p>
+          <p> This is a banana! It&apos;s yellow and delicious.</p>
           
           {/* TikTok UC Packages - Only shows when Banana is selected */}
           <div className="bg-[#336666] dark:bg-[#1a3333] rounded-xl w-full mt-8 p-4">
