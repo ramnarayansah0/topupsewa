@@ -28,3 +28,11 @@ model Pubg {
   rate    String @db.Text
   message String @db.Text
 }
+
+model Tiktok {
+  id        Int    @id @default(autoincrement())
+  videoslink String @db.Text
+  naam      String @db.Text
+  rate      String @db.Text
+  whatsapp  String @db.Text
+}

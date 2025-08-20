@@ -73,8 +73,33 @@ export default function Get() {
           throw new Error('Invalid pubg entry data structure');
         });
 
+        // Fetch Tiktok
+        const tiktokResponse = await fetch(`${baseUrl}/api/tiktok`, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        if (!tiktokResponse.ok) {
+          const errorData = await tiktokResponse.json();
+          throw new Error(errorData.error || `HTTP error! status: ${tiktokResponse.status}`);
+        }
+        const tiktokData = await tiktokResponse.json();
+        const tiktoktUsers: User[] = tiktokData.map((tiktok: any) => {
+          if (tiktok && typeof tiktok === 'object' && 'id' in tiktok && 'naam' in tiktok && 'rate' in tiktok) {
+            return {
+              id: Number(tiktok.id),
+              names: String(tiktok.naam),
+              playerid: String(tiktok.videoslink), // or tiktok.whatsapp if you want
+              price: String(tiktok.rate),
+              source: 'Tiktok',
+            };
+          }
+          throw new Error('Invalid tiktok data structure');
+        });
+
         // Combine and sort by id descending
-        const combinedUsers = [...projectUsers, ...pubgUsers].sort((a, b) => b.id - a.id);
+        const combinedUsers = [...projectUsers, ...pubgUsers, ...tiktoktUsers].sort((a, b) => b.id - a.id);
         setUsers(combinedUsers);
       } catch (err: unknown) {
         console.error("Error fetching data:", err);
