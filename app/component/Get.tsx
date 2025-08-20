@@ -85,7 +85,7 @@ export default function Get() {
           throw new Error(errorData.error || `HTTP error! status: ${tiktokResponse.status}`);
         }
         const tiktokData = await tiktokResponse.json();
-        const tiktoktUsers: User[] = tiktokData.map((tiktok: any) => {
+        const tiktoktUsers: User[] = tiktokData.map((tiktok: Record<string, unknown>) => {
           if (tiktok && typeof tiktok === 'object' && 'id' in tiktok && 'naam' in tiktok && 'rate' in tiktok) {
             return {
               id: Number(tiktok.id),

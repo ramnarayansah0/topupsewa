@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Image from 'next/image';
 
 export default function Header(){
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ export default function Header(){
           {/* Left side - Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2 hover:scale-105 transition-transform duration-200">
-              <img src="/freefire.jpg" alt="Free Fire Logo" className="h-8 w-8 md:h-12 md:w-12 rounded-full shadow-lg" />
+              <Image src="/freefire.jpg" alt="Free Fire Logo" className="h-8 w-8 md:h-12 md:w-12 rounded-full shadow-lg" width={48} height={48} />
               <span className="text-white font-bold text-lg md:text-xl hidden md:block">TopUpSewa</span>
             </Link>
           </div>
@@ -50,7 +51,7 @@ export default function Header(){
 
             {/* Desktop Profile */}
             <div className="hidden md:flex items-center">
-              <img className="h-8 w-8 cursor-pointer hover:scale-110 transition-transform duration-200" src="/profile.svg" alt="Profile" />
+              <Image className="h-8 w-8 cursor-pointer hover:scale-110 transition-transform duration-200" src="/profile.svg" alt="Profile" width={32} height={32} />
             </div>
           </div>
 
@@ -87,7 +88,7 @@ export default function Header(){
                   Order
                 </Link>
                 <div className="flex items-center gap-3 px-4 py-3">
-                  <img className="h-8 w-8" src="/profile.svg" alt="Profile" />
+                  <Image className="h-8 w-8" src="/profile.svg" alt="Profile" width={32} height={32} />
                   <span className="text-white font-semibold">Profile</span>
                 </div>
               </nav>

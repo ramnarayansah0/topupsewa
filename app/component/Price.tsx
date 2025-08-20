@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface PriceProps {
   price: string;
   diamond: string;
@@ -13,7 +15,7 @@ export default function Price(props: PriceProps) {
             >
                 <h2 className="text-[11px] text-[#367588] dark:text-[#4a9db3] left-1/2">Rs {props.price}</h2>
                 <h1 className="text-gray-900 dark:text-gray-100">{props.diamond}</h1>
-                <img className="h-4" src="/diamond.svg" alt="Diamond" />
+                <Image className="h-4" src="/diamond.svg" alt="Diamond" width={16} height={16} />
             </button>
         </div>
         </>
