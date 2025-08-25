@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from "next/link";
 
 // Update API URL to use port 3000
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
@@ -54,13 +55,13 @@ function addText3800(){
   setPrice("3800 (5060💎)")
 }
 function addText7600(){
-  setPrice("7600 (10120💎)")
+  setPrice("195")
 }
 function addText220w(){
-  setPrice("220 (60💎)")
+  setPrice("950")
 }
 function addText80w(){
-  setPrice("80 (60💎)")}
+  setPrice("195")}
 
   //
   const [playerid,setPlayerid] =useState("");
@@ -224,13 +225,13 @@ const addProduct = async () => {
                    <Price price="3800" diamond="5060 Diamond" />
                 </button>
                 <button onClick={addText7600}>
-                   <Price price="7600" diamond="10120 Diamond" />
+                   <Price price="195" diamond="Levelup" />
                 </button>
                 <button onClick={addText220w}>
-                   <Price price="not fix" diamond="Monthly" />
+                   <Price price="950" diamond="Monthly" />
                 </button>
                 <button onClick={addText80w}>
-                   <Price price="not fix" diamond=" Weekly" />
+                   <Price price="195" diamond=" Weekly" />
                 </button>
               </div>
             </div>
@@ -282,7 +283,7 @@ const addProduct = async () => {
           <div className="mt-8 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
             <h1 className="text-xl font-bold text-gray-900 dark:text-white mb-4">How to purchase Free Fire BD Diamonds in Free Fire Top Up:</h1>
             <div className="space-y-2 text-gray-700 dark:text-gray-300">
-              <p>1. First, select the Diamond Pack you want to buy.</p>
+              <p>1. First, select the Diamond Pack you want to buy<Link href="https://wa.link/n5cbbq" className="text-blue-400">OR Contact on whatsapp</Link></p>
               <p>2. Next, enter your Free Fire Player UID , Name and WhatsApp Number.</p>
               <p>3. After that, check out and choose your payment method (eSEWA, kHALTI).</p>
               <p>4. After payment is made, the Diamond you purchased will be credited to your account within 5 minutes</p>

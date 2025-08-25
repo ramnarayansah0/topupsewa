@@ -13,7 +13,7 @@ export default function Header(){
           {/* Left side - Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2 hover:scale-105 transition-transform duration-200">
-              <Image src="/freefire.jpg" alt="Free Fire Logo" className="h-8 w-8 md:h-12 md:w-12 rounded-full shadow-lg" width={48} height={48} />
+              <Image src="/LOGOTOP.png" alt="Free Fire Logo" className="h-8 w-8 md:h-12 md:w-12 rounded-full shadow-lg bg-white" width={48} height={48} />
               <span className="text-white font-bold text-lg md:text-xl hidden md:block">TopUpSewa</span>
             </Link>
           </div>
