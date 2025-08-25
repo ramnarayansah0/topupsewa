@@ -12,7 +12,7 @@ export default function ProductCard(props: ProductCardProps) {
     return (
         <div className="bg-amber-400 dark:bg-amber-900 rounded-lg p-4">
             <Image 
-                src={props.img} 
+                src={props.img.startsWith('/') ? props.img : `/${props.img}`}
                 alt={props.name} 
                 width={128}
                 height={128}
