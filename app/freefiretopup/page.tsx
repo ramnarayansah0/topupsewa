@@ -37,7 +37,7 @@ export default function Page() {
           {/* QR Code Section */}
           <div className="text-center">
             <h1 className="text-3xl font-extrabold text-[#2E8B57] dark:text-[#4CAF50]">Please Scan QR for Payment</h1>
-            <Image className="mx-auto mt-6 w-60 h-80 object-contain rounded-lg shadow-xl" src={ram} alt="freefire topup qr" width={240} height={320} />
+            <Image className="mx-auto mt-6 w-60 h-80 object-contain rounded-lg shadow-xl" src={ram.startsWith('/') ? ram : `/${ram}`} alt="freefire topup qr" width={240} height={320} />
             <div className="space-x-7 mt-9">
             <button className="bg-blue-400 rounded-md hover:bg-blue-600 p-3" onClick={esewa}>Esewa</button> <button className="bg-blue-100 hover:bg-blue-600 rounded-md p-3" onClick={khalti}>Khalti</button>
 

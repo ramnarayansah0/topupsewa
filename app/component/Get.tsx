@@ -134,6 +134,13 @@ export default function Get() {
     );
   }
 
+  
+
+  const truncateChars = (text: string, maxChars: number) => {
+    if (text.length <= maxChars) return text;
+    return text.slice(0, maxChars) + '…';
+  };
+
   return (
     <div className="container mx-auto p-4">
       <div className="overflow-x-auto bg-white dark:bg-gray-800 shadow-md rounded-lg" style={{ maxHeight: '50vh' }}>
@@ -157,7 +164,7 @@ export default function Get() {
                 <tr key={user.id} className="border-t dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700">
                   <td className="px-4 py-2">{user.id}</td>
                   <td className="px-4 py-2">{user.names}</td>
-                  <td className="px-4 py-2">{user.playerid}</td>
+                  <td className="px-4 py-2">{truncateChars(user.playerid, 10)}</td>
                   <td className="px-4 py-2">{user.price}</td>
                   <td className="px-4 py-2">{user.source || 'Project'}</td>
                 </tr>

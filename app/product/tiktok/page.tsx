@@ -91,9 +91,9 @@ const [rate,setRate]= useState("Select Price");
               <option value="Views" >Views</option>
               <option value="Likes">Likes</option>
               
-              <option value="Mango">Mango</option>
-              <option value="Orange">Orange</option>
-              <option value="Grapes">Grapes</option>
+              <option disabled value="Mango">Flowers</option>
+              <option disabled value="Orange">premium</option>
+              
             </select>
             {selectedOption && <p className="mt-2 text-sm text-gray-600">Selected: {selectedOption}</p>}
           </div>
