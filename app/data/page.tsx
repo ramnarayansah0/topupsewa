@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState } from "react";
+import Pubgdata from "../component/Pubgdata";
 
 interface User {
   id: number;
@@ -172,6 +173,7 @@ export default function Data() {
           </tbody>
         </table>
       </div>
+      <Pubgdata/>
     </div>
   );
 }

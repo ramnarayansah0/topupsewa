@@ -3,8 +3,8 @@ import { useState } from "react";
 import Footer from "../../component/Footer";
 import Header from "../../component/Header";
 import Price from "../../component/Price";
-import Pubgdata from "@/app/component/Pubgdata";
 import Image from 'next/image';
+import Pubgnonum from "@/app/component/Pubgnonum";
 
 export default function Page() {
    const [rate,setRate]= useState("Click on UC")
@@ -249,7 +249,7 @@ export default function Page() {
               {submitStatus}
             </div>
           )}
-          <Pubgdata/>
+          <Pubgnonum/>
           <div className="mt-8 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
             <h1 className="text-xl font-bold text-gray-900 dark:text-white mb-4">How to purchase PUBG UC  in PUBG  Top Up:</h1>
             <div className="space-y-2 text-gray-700 dark:text-gray-300">

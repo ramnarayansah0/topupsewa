@@ -55,13 +55,13 @@ function addText3800(){
   setPrice("3800 (5060💎)")
 }
 function addText7600(){
-  setPrice("195")
+  setPrice("195 L")
 }
 function addText220w(){
-  setPrice("950")
+  setPrice("950 M")
 }
 function addText80w(){
-  setPrice("195")}
+  setPrice("195 W")}
 
   //
   const [playerid,setPlayerid] =useState("");
